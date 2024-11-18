@@ -18,6 +18,8 @@ Referências:
 
 ## Diagrama de classes:
 
+Usando ChatGPT:
+
 ```mermaid
 
 classDiagram
@@ -55,4 +57,76 @@ classDiagram
   User "1" *-- "N" Feature
   User "1" *-- "1" Card
   User "1" *-- "N" News
+```
+
+Usando Gemini:
+
+```mermaid
+
+classDiagram
+    User {
+        name: String
+        account: Account
+        features: Feature[]
+        card: Card
+        news: News[]
+    }
+
+    Account {
+        number: String
+        agency: String
+        balance: Float
+        limit: Float
+    }
+
+    Feature {
+        icon: String
+        description: String
+    }
+
+    Card {
+        number: String
+        limit: Float
+    }
+
+    News {
+        icon: String
+        description: String
+    }
+
+    User "1" -- "1" Account
+    User "1" -- "*" Feature
+    User "1" -- "1" Card
+    User "1" -- "*" News
+
+```
+
+JSON usado para gerar diagramas:
+
+```json
+{
+  "name": "Thiago Santos",
+  "account": {
+    "number": "00000-00",
+    "agency": "0000",
+    "balance": 12345.0,
+    "limit": 1000.0
+  },
+  "features": [
+    {
+      "icon": "url",
+      "description": "description features"
+    }
+  ],
+  "card": {
+    "number": "xxxx xxxx xxxx 0000",
+    "limit": 1000.0
+  },
+  "news": [
+    {
+      "icon": "url",
+      "description": "description news"
+    }
+  ]
+}
 ```
