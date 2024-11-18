@@ -64,7 +64,7 @@ Usando Gemini:
 ```mermaid
 
 classDiagram
-    User {
+    class User {
         name: String
         account: Account
         features: Feature[]
@@ -72,24 +72,24 @@ classDiagram
         news: News[]
     }
 
-    Account {
+   class Account {
         number: String
         agency: String
         balance: Float
         limit: Float
     }
 
-    Feature {
+    class Feature {
         icon: String
         description: String
     }
 
-    Card {
+    class Card {
         number: String
         limit: Float
     }
 
-    News {
+    class News {
         icon: String
         description: String
     }
